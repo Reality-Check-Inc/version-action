@@ -1,0 +1,20 @@
+# action.yml
+name: 'Time Stamp and Version'
+description: 'Set unix time stamp and version'
+inputs:
+  vartime:  # id of input
+    description: 'Repostiory variable to hold time stamp'
+    required: false
+    default: 'nuget_timestamp'
+  varversion:  # id of input
+    description: 'Repostiory variable to hold version'
+    required: false
+    default: 'nuget_version'
+outputs:
+  time: # id of output
+    description: 'Current unix time stamp'
+  version: # id of output
+    description: 'Most recent tag as version'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
