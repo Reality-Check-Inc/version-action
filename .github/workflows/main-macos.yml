@@ -18,7 +18,7 @@ jobs:
 
     - name: Get Data
       id: info
-      uses: Reality-Check-Inc/version-action@v0.2
+      uses: Reality-Check-Inc/version-action@v1.0
 
     # By default, Linux runners use the bash shell,
     # so you must use the syntax $NAME.

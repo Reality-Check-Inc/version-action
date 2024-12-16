@@ -22,7 +22,7 @@ The current tag as a version.
 ```yaml
 - name: Get Data
   id: info
-  uses: Reality-Check-Inc/version-action@v1
+  uses: Reality-Check-Inc/version-action@v1.0
 
 - name: Set the output time and version variables
   run: |
