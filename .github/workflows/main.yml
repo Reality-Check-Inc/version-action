@@ -17,7 +17,7 @@ jobs:
 
     - name: Get Data
       id: info
-      uses: Reality-Check-Inc/version-action@v1.29
+      uses: Reality-Check-Inc/version-action@v0.1
       with:
         vartime: 'nuget_timestamp'
         varversion: 'nuget_version'
