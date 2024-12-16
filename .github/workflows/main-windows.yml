@@ -18,9 +18,11 @@ jobs:
 
     - name: Get Data
       id: info
-      uses: Reality-Check-Inc/version-action@v1.0.1
+      uses: Reality-Check-Inc/version-action@v1.0.2
       env:
-        GH_TOKEN: ${{ secrets.PAT }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    #    GH_TOKEN: ${{ secrets.PAT }}
 
     # By default, Linux runners use the bash shell,
     # so you must use the syntax $NAME.
