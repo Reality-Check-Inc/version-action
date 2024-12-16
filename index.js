@@ -37,6 +37,28 @@ try {
   }
   core.setOutput("version", lastPart);
 
+  async function run() {
+    try {
+      let describeOutput = '';
+      const options = {};
+      options.listeners = {
+        stdout: (data) => {
+          describeOutput += data.toString();
+        }
+      };
+      // Execute 'git describe'
+      await exec.exec('gh', ['label', 'list'], options);
+        // Set the output variable
+      const tagout = describeOutput.trim();
+      console.log(`gh label list says the most recent tag is: ${tagout}`);
+      //core.setOutput('tag', tagout);
+    } catch (error) {
+      console.log(error.message);
+      //core.setFailed(error.message);
+    }
+  }
+  run();
+
   // this won't work
   // failed to run git: fatal: not a git repository (or any of the parent directories): .git
   // gh variable set LOGMINDS_NUGET_VERSION --body "${{ env.nug_version }}"

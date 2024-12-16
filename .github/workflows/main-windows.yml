@@ -19,6 +19,8 @@ jobs:
     - name: Get Data
       id: info
       uses: Reality-Check-Inc/version-action@v1.0
+      env:
+        GH_TOKEN: ${{ secrets.PAT }}
 
     # By default, Linux runners use the bash shell,
     # so you must use the syntax $NAME.
