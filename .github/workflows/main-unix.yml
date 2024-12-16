@@ -28,13 +28,13 @@ jobs:
     - name: Set the output time and version variables
       run: |
         echo "NUGET_TIME=$(echo ${{ steps.info.outputs.time }})" >> $GITHUB_ENV
-        echo "NUGET_VERSION=$(echo ${{ steps.info.outputs.time }})" >> $GITHUB_ENV
+        echo "NUGET_VERSION=$(echo ${{ steps.info.outputs.version }})" >> $GITHUB_ENV
 
     - name: Show the current output time and version.
       run: |
         echo $NUGET_TIME
         echo $NUGET_VERSION
-      
+
     # failed to run git: fatal: not a git repository (or any of the parent directories): .git
     #- name: Show variables after
     #  run: |
