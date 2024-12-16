@@ -27,8 +27,8 @@ jobs:
     # Use the output from the `info` step
     - name: Set the output time and version variables
       run: |
-        echo "nug_time=${{ steps.info.outputs.time }}" | Out-File -FilePath $env:GITHUB_ENV -Append
-        echo "nug_version=${{ steps.info.outputs.version }}" | Out-File -FilePath $env:GITHUB_ENV -Append
+        echo "nug_time=${{ steps.info.outputs.time }}"
+        echo "nug_version=${{ steps.info.outputs.version }}"
 
     - name: Show the current output time and version.
       run: |
