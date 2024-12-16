@@ -37,8 +37,9 @@ try {
   }
   core.setOutput("version", lastPart);
 
-  /*
+  // this won't work
   // gh variable set LOGMINDS_NUGET_VERSION --body "${{ env.nug_version }}"
+  /*
   const vartime = core.getInput('vartime');
   const varversion = core.getInput('varversion');
   async function run() {

@@ -5,13 +5,7 @@ This action get the current unix time stamp and tag as a version
 
 ## Inputs
 
-### `vartime`
-
-**Options** Repository variable to hold the time stamp.
-
-### `varversion`
-
-**Options** Repository variable to hold the version.
+None
 
 ## Outputs
 
@@ -28,10 +22,15 @@ The current tag as a version.
 ```yaml
 - name: Get Data
   id: info
-  uses: Reality-Check-Inc/version-action@v0.1
-  with:
-    vartime: 'nuget_timestamp'
-    varversion: 'nuget_version'
-  env:
-    GH_TOKEN: ${{ secrets.PAT }}
+  uses: Reality-Check-Inc/version-action@v1
+
+- name: Set the output time and version variables
+  run: |
+    echo "nug_time=${{ steps.info.outputs.time }}" | Out-File -FilePath $env:GITHUB_ENV -Append
+    echo "nug_version=${{ steps.info.outputs.version }}" | Out-File -FilePath $env:GITHUB_ENV -Append
+
+- name: Show the current output time and version.
+  run: |
+    echo "${{ env.nug_time }}"
+    echo "${{ env.nug_version }}"    
 ```

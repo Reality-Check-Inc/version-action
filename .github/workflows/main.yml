@@ -9,20 +9,16 @@ jobs:
     timeout-minutes: 15
     steps:
 
-    - name: Show variables before
-      run: |
-        gh variable list
-      env:
-        GH_TOKEN: ${{ secrets.PAT }}
+    # failed to run git: fatal: not a git repository (or any of the parent directories): .git
+    #- name: Show variables before
+    #  run: |
+    #    gh variable list
+    #  env:
+    #    GH_TOKEN: ${{ secrets.PAT }}
 
     - name: Get Data
       id: info
-      uses: Reality-Check-Inc/version-action@v0.1
-      with:
-        vartime: 'nuget_timestamp'
-        varversion: 'nuget_version'
-      env:
-        GH_TOKEN: ${{ secrets.PAT }}
+      uses: Reality-Check-Inc/version-action@v0.2
 
     # By default, Linux runners use the bash shell,
     # so you must use the syntax $NAME.
@@ -39,8 +35,9 @@ jobs:
         echo "${{ env.nug_time }}"
         echo "${{ env.nug_version }}"
 
-    - name: Show variables after
-      run: |
-          gh variable list
-      env:
-        GH_TOKEN: ${{ secrets.PAT }}
+    # failed to run git: fatal: not a git repository (or any of the parent directories): .git
+    #- name: Show variables after
+    #  run: |
+    #      gh variable list
+    #  env:
+    #    GH_TOKEN: ${{ secrets.PAT }}
