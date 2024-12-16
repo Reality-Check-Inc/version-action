@@ -38,6 +38,7 @@ try {
   core.setOutput("version", lastPart);
 
   // this won't work
+  // failed to run git: fatal: not a git repository (or any of the parent directories): .git
   // gh variable set LOGMINDS_NUGET_VERSION --body "${{ env.nug_version }}"
   /*
   const vartime = core.getInput('vartime');
